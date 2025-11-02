@@ -3,13 +3,14 @@ import { getNoteById, getAllNotes, createNote, deleteNote, updateNote } from "..
 import { celebrate } from 'celebrate';
 import {
 	createNoteSchema,
+	getNotesSchema,
 	noteIdSchema,
 	updateNoteSchema,
 } from '../validations/notesValidation.js';
 
 const router = Router();
 
-router.get('/notes', getAllNotes);
+router.get('/notes', celebrate(getNotesSchema), getAllNotes);
 router.get('/notes/:noteId', celebrate(noteIdSchema), getNoteById);
 
 router.post('/notes', celebrate(createNoteSchema), createNote);
