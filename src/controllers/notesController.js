@@ -73,7 +73,7 @@ export const updateNote = async (req, res, next) => {
 		new: true,
 	});
 
-	if (!noteId) {
+	if (!noteUpdate) {
 		next(createHttpError(404, 'Note not found'));
 		return;
 	}
