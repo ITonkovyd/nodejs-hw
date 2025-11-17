@@ -19,6 +19,11 @@ const notesSchema = new Schema(
 			enum: TAGS,
 			default: 'Todo',
 		},
+		userId: {
+			type: Object,
+			required: true,
+			ref: 'User',
+		},
 	},
 	{
 		timestamps: true,
