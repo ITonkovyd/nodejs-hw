@@ -45,7 +45,7 @@ export const noteIdSchema = {
 	[Segments.PARAMS]: Joi.object(IdSchema),
 };
 
-export const getNotesSchema = {
+export const getAllNotesSchema = {
 	[Segments.QUERY]: Joi.object(queryString),
 };
 
