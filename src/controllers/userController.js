@@ -1,3 +1,7 @@
+import createHttpError from 'http-errors';
+
 export const updateUserAvatar = async (req, res, next) => {
-  res.status(200).json({ url: "" });
+	if (!req.file) return next(createHttpError(400, 'No file'));
+
+	res.status(200).json({ url: '' });
 };
